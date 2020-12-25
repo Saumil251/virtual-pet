@@ -3,7 +3,7 @@ var dog,dogImage
 var happyDogImage
 var database
 var foodS
-var foodStock
+var foodS
 function preload()
 {
   dogImage=loadImage("images/dogImg.png")
@@ -17,8 +17,8 @@ function setup() {
   dog=createSprite(300,400,20,20)
   dog.addImage("dogImage",dogImage)
   dog.scale=0.2
-  foodStock=database.ref('Food')
-  foodStock.on("value",readStock)
+  foodS=database.ref('Food')
+  foodS.on("value",readStock)
   
 }
 
@@ -30,9 +30,9 @@ if(keyWentDown(UP_ARROW)){
   dog.addImage(happyDogImage)
 }
   drawSprites();
-  textSize(10)
-  fill("black")
-  text("foodS"+foodStock,300,350)
+  textSize(15)
+  fill("white")
+  text("food left"+foodS,250,300)
   //add styles here
 
 }
