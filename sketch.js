@@ -44,7 +44,7 @@ background(46,139,87)
 foodObj.display()
 
 fedTime=database.ref('FeedTime')
-fedTime.on("value",funtion(data){
+fedTime.on("value",function(data){
   lastFed=data.val()
 })
 
@@ -66,6 +66,7 @@ fill(255,255,254)
 }
 function readStock(data){
 foodS=data.val() 
+foodObj.updateFoodStock(foodS)
 }
 function writeStock(x){
 if(x<=0){
@@ -81,7 +82,7 @@ Food:x
 }
 
 function feedDog(){
-  dog.addImage(happyDog)
+  dog.addImage(happyDogImage)
 
   foodObj.updateFoodStock(foodObj.getFoodStock()-1)
   database.ref('/').update({
@@ -92,7 +93,7 @@ function feedDog(){
 
 function addFoods(){
   foodS++
-  database.ref('/').updste({
+  database.ref('/').update({
     Food:foodS
   })
 }

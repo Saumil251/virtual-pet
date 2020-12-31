@@ -35,7 +35,7 @@ display(){
             x=70
             y=y+20
         }
-        this.image(this.image,x,y,50,50)
+        image(this.image,x,y,50,50)
         x=x+30
     }
 }
